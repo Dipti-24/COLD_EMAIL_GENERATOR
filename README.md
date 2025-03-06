@@ -6,9 +6,13 @@ The Cold Email Generator is a Python-based tool that automates the process of cr
 
 **Features**
 
-Job Scraping & Processing: Extracts job details such as role, experience, skills, and description from the given URL.Cold Email Generation: Generates personalized cold emails based on job descriptions and a predefined AI prompt.✅ Follow-up Email: Creates follow-up emails based on the number of days since the initial contact.✅ Portfolio Integration: Matches job-related skills with relevant portfolio links stored in a ChromaDB vector database.✅ Interactive UI: Uses Streamlit for an intuitive user interface.
+1. Job Scraping & Processing: Extracts job details such as role, experience, skills, and description from the given URL.
+2. Cold Email Generation: Generates personalized cold emails based on job descriptions and a predefined AI prompt.
+3. Follow-up Email: Creates follow-up emails based on the number of days since the initial contact.
+4. Portfolio Integration: Matches job-related skills with relevant portfolio links stored in a ChromaDB vector database.
+5. Interactive UI: Uses Streamlit for an intuitive user interface.
 
-**Tech Stack**
+**Tech Use**
 
 **1.Python**
 
@@ -26,7 +30,7 @@ Job Scraping & Processing: Extracts job details such as role, experience, skills
 
 **1️. Clone the Repository**
 
-git clone https://github.com/your-repo/cold-email-generator.git
+git clone 
 cd cold-email-generator
 
 **2️2. Install Dependencies**
@@ -50,8 +54,11 @@ This will launch the Cold Email Generator in your browser.
 **Usage**
 
 1️. Enter a job listing URL in the input box and press "Submit".
+
 2️. The app scrapes the job page and extracts relevant details.
+
 3️. It generates a cold email tailored to the job description.
+
 4️. Optionally, generate a follow-up email by selecting the checkbox.
 
 **Future Enhancements**
