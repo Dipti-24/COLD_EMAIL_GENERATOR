@@ -30,7 +30,7 @@ The Cold Email Generator is a Python-based tool that automates the process of cr
 
 **1️. Clone the Repository**
 
-git clone 
+git clone https://github.com/Dipti-24/COLD_EMAIL_GENERATOR
 cd cold-email-generator
 
 **2️2. Install Dependencies**
