@@ -1,10 +1,10 @@
 # COLD_EMAIL_GENERATOR
 
-**Overview**
+## Overview
 
 The Cold Email Generator is a Python-based tool that automates the process of crafting personalized cold emails for job opportunities. The application scrapes job listings from a given URL, extracts relevant job details, and generates well-structured cold emails and follow-up emails. It leverages LangChain, ChromaDB, and Streamlit for data processing and interaction.
 
-**Features**
+## Features
 
 1. Job Scraping & Processing: Extracts job details such as role, experience, skills, and description from the given URL.
 2. Cold Email Generation: Generates personalized cold emails based on job descriptions and a predefined AI prompt.
@@ -12,7 +12,7 @@ The Cold Email Generator is a Python-based tool that automates the process of cr
 4. Portfolio Integration: Matches job-related skills with relevant portfolio links stored in a ChromaDB vector database.
 5. Interactive UI: Uses Streamlit for an intuitive user interface.
 
-**Tech Use**
+## Tech Use
 
 **1.Python**
 
@@ -26,33 +26,33 @@ The Cold Email Generator is a Python-based tool that automates the process of cr
 
 **6.Groq API** : For LLM-powered text generation
 
-**Installation & Setup**
+## Installation & Setup
 
-**1️. Clone the Repository**
+### 1️. Clone the Repository
 
 git clone https://github.com/Dipti-24/COLD_EMAIL_GENERATOR
 
-cd cold-email-generator
+cd COLD_EMAIL_GENERATOR
 
-**2️2. Install Dependencies**
+### 2️. Install DependencieS
 
 Ensure you have Python 3.8+ installed, then run:
 
 pip install -r requirements.txt
 
-**3️. Set Up Environment Variables**
+### 3️. Set Up Environment Variables
 
 Create a .env file in the root directory and add your Groq API key:
 
 GROQ_API_KEY=your_groq_api_key_here
 
-**4️. Run the Application**
+### 4️. Run the Application
 
 streamlit run app.py
 
 This will launch the Cold Email Generator in your browser.
 
-**Usage**
+## Usage
 
 1️. Enter a job listing URL in the input box and press "Submit".
 
@@ -62,14 +62,14 @@ This will launch the Cold Email Generator in your browser.
 
 4️. Optionally, generate a follow-up email by selecting the checkbox.
 
-**Future Enhancements**
+## Future Enhancements
 
 Add email templates & customization options.
 
-**License**
+## License
 
-This project is licensed under  the MIT License. 
+This project is licensed under  the [MIT License](). 
 
-**Contact**
+## Contact
 For any query reach out to me at mishradipti2402@gmail.com
 
