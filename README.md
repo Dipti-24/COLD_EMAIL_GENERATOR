@@ -68,7 +68,7 @@ Add email templates & customization options.
 
 ## License
 
-This project is licensed under  the [MIT License](). 
+This project is licensed under  the [MIT License](https://github.com/Dipti-24/COLD_EMAIL_GENERATOR?tab=MIT-1-ov-file#). 
 
 ## Contact
 For any query reach out to me at mishradipti2402@gmail.com
