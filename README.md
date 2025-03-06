@@ -68,7 +68,7 @@ Add email templates & customization options.
 
 **License**
 
-MIT License. Feel free to modify and contribute! 
+This project is under MIT License. Feel free to modify and contribute! 
 
 **Contact**
 For any query reach out to me at mishradipti2402@gmail.com
