@@ -48,7 +48,7 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ### 4️. Run the Application
 
-streamlit run app.py
+streamlit run main.py
 
 This will launch the Cold Email Generator in your browser.
 
