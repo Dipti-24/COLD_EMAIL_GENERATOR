@@ -1,4 +1,3 @@
-
 import os
 from langchain_groq import ChatGroq
 from langchain_core.prompts import PromptTemplate
@@ -10,8 +9,12 @@ load_dotenv()
 
 class Chain:
     def __init__(self):
-        self.llm = ChatGroq(temperature=0, groq_api_key=os.getenv("GROQ_API_KEY"), model_name="llama-3.3-70b-versatile")
-
+        self.llm = ChatGroq(
+            temperature=0,
+            groq_api_key=os.getenv("GROQ_API_KEY"),
+            model_name="llama-3.3-70b-versatile"
+        )
+        
     def extract_jobs(self, cleaned_text):
         prompt_extract = PromptTemplate.from_template(
             """
@@ -33,9 +36,8 @@ class Chain:
             raise OutputParserException("Context too big. Unable to parse jobs.")
         return res if isinstance(res, list) else [res]
 
-    
     def write_mail(self, job, links):
-        company_name = job.get('company', 'your company')  # Extract company name
+        company_name = job.get('company', 'your company')
         role = job.get('role', 'this position')
         skills = ", ".join(job.get('skills', []))
 
@@ -47,21 +49,24 @@ class Chain:
             ### INSTRUCTION:
             You are Dipti, a business development executive at Qi, an AI & Software Consulting company.  
             You are reaching out to **{company_name}** regarding their opening for **{role}**.  
-            
+
             Personalize the email by:
             - Mentioning the role and key required skills: {skills}
             - Highlighting how Qi has experience in similar projects.
-            - Adding the most relevant portfolio links: {links}
+            - Adding the most relevant portfolio links: {{link_list}}
 
             Do not include a preamble.
-            
+
             ### EMAIL (NO PREAMBLE):
             """
         )
-        chain_email = prompt_email | self.llm
-        res = chain_email.invoke({"job_description": str(job), "link_list": links})
-        return res.content
 
+        chain_email = prompt_email | self.llm
+        res = chain_email.invoke({
+            "job_description": str(job),
+            "link_list": "\n".join(links)
+        })
+        return res.content
 
     def write_follow_up(self, job, links, days_since_last_email):
         follow_up_prompt = PromptTemplate.from_template(
@@ -78,11 +83,12 @@ class Chain:
             You can also add the most relevant portfolio links from the following: {link_list}
             Do not provide a preamble.
             ### EMAIL (NO PREAMBLE):
-                """
+            """
         )
         chain_follow_up = follow_up_prompt | self.llm
-        res = chain_follow_up.invoke({"job_description": str(job), "link_list": links, "days_since_last_email": days_since_last_email})
+        res = chain_follow_up.invoke({
+            "job_description": str(job),
+            "link_list": "\n".join(links),
+            "days_since_last_email": days_since_last_email
+        })
         return res.content
-
-if __name__ == "__main__":
-    print(os.getenv("GROQ_API_KEY"))

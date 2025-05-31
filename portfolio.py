@@ -19,8 +19,28 @@ class Portfolio:
                                     ids=[str(uuid.uuid4())])
 
     def query_links(self, skills, job_title):
-        query_texts = [job_title] + skills  # Combine job role + skills for better matching
-        results = self.collection.query(query_texts=query_texts, n_results=3)
-        links = [item["links"] for item in results.get("metadatas", [])]
+       
+    # Ensure job_title is string
+        if not isinstance(job_title, str):
+            job_title = str(job_title) if job_title is not None else ""
 
+        # Ensure skills is a list of strings
+        if isinstance(skills, str):
+            skills = [skills]
+        elif not isinstance(skills, list):
+            skills = []
+        skills = [str(skill) for skill in skills if skill]
+
+        query_texts = [job_title] + skills
+
+        # Run query
+        results = self.collection.query(query_texts=query_texts, n_results=3)
+
+        # metadatas is a list of list of dicts → extract "links" from inner list
+        links = [meta.get("links", "") for meta in results.get("metadatas", [[]])[0]]
         return links
+
+
+
+        
+    
