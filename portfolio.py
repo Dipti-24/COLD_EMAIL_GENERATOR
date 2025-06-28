@@ -2,14 +2,18 @@
 import pandas as pd
 import chromadb
 import uuid
-
+import os
 
 class Portfolio:
-    def __init__(self, file_path=r"C:\Users\mishr\Downloads\ColdEmailGen\app\resource\my_portfolio.csv"):
+    def __init__(self, file_path=None):
+        if file_path is None:
+            base_dir = os.path.dirname(__file__)
+            file_path = os.path.join(base_dir, "resource", "my_portfolio.csv")
         self.file_path = file_path
         self.data = pd.read_csv(file_path)
-        self.chroma_client = chromadb.PersistentClient('vectorstore')
+        self.chroma_client = chromadb.PersistentClient("vectorstore")
         self.collection = self.chroma_client.get_or_create_collection(name="portfolio")
+
 
     def load_portfolio(self):
         if not self.collection.count():
