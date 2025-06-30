@@ -26,6 +26,8 @@ The Cold Email Generator is a Python-based tool that automates the process of cr
 
 **6.Groq API** : For LLM-powered text generation
 
+**7. Docker** – Containerization
+
 ## Installation & Setup
 
 ### 1️. Clone the Repository
@@ -34,13 +36,7 @@ git clone https://github.com/Dipti-24/COLD_EMAIL_GENERATOR
 
 cd COLD_EMAIL_GENERATOR
 
-### 2️. Install DependencieS
-
-Ensure you have Python 3.8+ installed, then run:
-
-pip install -r requirements.txt
-
-### 3️. Set Up Environment Variables
+### 2. Set Up Environment Variables
 
 Create a .env file in the root directory and add your Groq API key:
 
@@ -48,9 +44,31 @@ GROQ_API_KEY=your_groq_api_key_here
 
 ### 4️. Run the Application
 
-streamlit run main.py
+#### Without Docker
+1. Install DependencieS
 
-This will launch the Cold Email Generator in your browser.
+Ensure you have Python 3.8+ installed, then run:
+
+pip install -r requirements.txt
+
+
+2. streamlit run main.py
+
+This will launch the Cold Email Generator in your browser
+
+#### With DOcker
+1. Build the docker image
+   docker build -t cold-mail-generator .
+   
+2. Run the App (Windows)
+   docker run -it --rm -p 8501:8501 `
+  -v "${PWD}\vectorstore:/app/vectorstore" `
+  --env-file .env `
+  cold-mail-generator
+
+3 Access the app
+  Visit: http://localhost:8501
+
 
 ## Usage
 
