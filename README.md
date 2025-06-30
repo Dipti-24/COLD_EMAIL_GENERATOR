@@ -61,12 +61,13 @@ The Cold Email Generator is a Python-based tool that automates the process of cr
    docker build -t cold-mail-generator .
    
 2. Run the App (Windows)
+
    docker run -it --rm -p 8501:8501 `
   -v "${PWD}\vectorstore:/app/vectorstore" `
   --env-file .env `
   cold-mail-generator
 
-3. Access the app
+4. Access the app
    Visit: http://localhost:8501
 
 
