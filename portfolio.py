@@ -4,6 +4,9 @@ import chromadb
 import uuid
 import os
 
+
+os.environ["CHROMA_TELEMETRY"] = os.getenv("CHROMA_TELEMETRY", "False")
+
 class Portfolio:
     def __init__(self, file_path=None):
         if file_path is None:
