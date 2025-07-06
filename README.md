@@ -77,6 +77,12 @@ The Cold Email Generator is a Python-based tool that automates the process of cr
 
 4️. Optionally, generate a follow-up email by selecting the checkbox.
 
+## Live Deployment
+
+🌐 Deployed on Render
+
+ Visit  https://cold-email-generator-37xj.onrender.com
+
 ## Future Enhancements
 
 Add email templates & customization options.
