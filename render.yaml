@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: cold-email-generator
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false  # I’ll add manually on the dashboard
+    autoDeploy: false
